@@ -71,6 +71,4 @@ Visit the project landing page (hosted with GitHub Pages) to preview both files:
 
 The page offers side‑by‑side download cards for the PDF and PowerPoint.
 
----
 
-## 🗂 File Structure
