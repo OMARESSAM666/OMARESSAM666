@@ -1,19 +1,7 @@
 # Cybersecurity Incident Response Framework
 
-[![GitHub Pages](https://img.shields.io/badge/Live%20Demo-%F0%9F%94%97-blue)](https://yourusername.github.io/your-repo/)  
+[![GitHub Pages](https://img.shields.io/badge/Live%20Demo-%F0%9F%94%97-blue)](https://omaressam666.github.io/OMARESSAM666/)  
 **A 100‑employee simulation covering 6 threat scenarios, full SOC incident reports, and zero ransoms paid.**
-
----
-
-## 📖 Table of Contents
-- [Overview](#overview)
-- [Team](#team)
-- [Deliverables](#deliverables)
-- [Live Demo](#live-demo)
-- [File Structure](#file-structure)
-- [How to Use / Download](#how-to-use--download)
-- [Key Findings](#key-findings)
-- [License](#license)
 
 ---
 
