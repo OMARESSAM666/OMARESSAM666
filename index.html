@@ -1,320 +1,325 @@
+
+---
+
+## 2. `index.html`
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cybersecurity Incident Response Framework</title>
-<style>
-  :root {
-    --navy:#0F1C3F; --blue:#1E6FBF; --teal:#0A8A65;
-    --amber:#C05C0A; --purple:#5038A0; --red:#B22222;
-    --green:#0F6B3A; --text:#1A1A1A; --muted:#5F5E5A;
-    --bg:#FAFAF8; --card:#FFFFFF; --border:#E2E0DA;
-    --light:#F5F4F0;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-    background:var(--bg);color:var(--text);line-height:1.6}
-
-  /* HERO */
-  .hero{background:var(--navy);padding:44px 24px 38px;text-align:center}
-  .hero h1{font-size:clamp(20px,3vw,28px);font-weight:600;color:#fff;margin-bottom:10px}
-  .hero p{font-size:14px;color:rgba(255,255,255,.5)}
-
-  /* TEAM */
-  .team-row{display:flex;justify-content:center;gap:10px;margin-top:22px;flex-wrap:wrap}
-  .name-chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
-    color:rgba(255,255,255,.9);font-size:14px;font-weight:500;
-    padding:7px 20px;border-radius:30px}
-
-  /* LAYOUT */
-  .wrap{max-width:960px;margin:0 auto;padding:0 20px 56px}
-  .section-title{font-size:11px;font-weight:700;text-transform:uppercase;
-    letter-spacing:.1em;color:var(--muted);margin:32px 0 12px}
-
-  /* HIGHLIGHT CARDS (presentation + PDF) */
-  .highlight-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .highlight-card{background:var(--card);border:1px solid var(--border);
-    border-radius:12px;padding:22px;display:flex;align-items:center;gap:16px;
-    text-decoration:none;color:inherit;transition:box-shadow .18s,transform .18s}
-  .highlight-card:hover{box-shadow:0 4px 18px rgba(0,0,0,.1);transform:translateY(-2px)}
-  .hl-icon{font-size:32px;flex-shrink:0}
-  .hl-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:3px}
-  .hl-sub{font-size:12px;color:var(--muted)}
-  .hl-bar{height:4px;border-radius:2px;margin-bottom:16px}
-
-  /* DEPI SECTIONS GRID */
-  .depi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
-  .depi-card{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden}
-  .depi-card-hdr{padding:12px 14px 8px;display:flex;align-items:center;gap:10px}
-  .depi-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;
-    justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;color:#fff}
-  .depi-card-title{font-size:13px;font-weight:600}
-  .depi-card-files{padding:0 14px 12px}
-  .file-link{display:flex;align-items:center;gap:6px;font-size:12px;
-    color:var(--blue);text-decoration:none;padding:3px 0}
-  .file-link:hover{text-decoration:underline}
-  .file-note{font-size:11px;color:var(--muted);padding:3px 0;display:block;line-height:1.5}
-
-  /* WEEKLY WORK */
-  .weeks-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
-  .week-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px}
-  .week-hdr{display:flex;align-items:center;gap:8px;margin-bottom:10px}
-  .week-num{width:24px;height:24px;border-radius:50%;font-size:11px;font-weight:700;
-    display:flex;align-items:center;justify-content:center;color:#fff}
-
-  /* DOWNLOADS */
-  .dl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
-  .dl-card{background:var(--card);border:1px solid var(--border);border-radius:10px;
-    padding:14px;display:flex;align-items:center;gap:10px;text-decoration:none;
-    color:inherit;transition:box-shadow .18s}
-  .dl-card:hover{box-shadow:0 3px 12px rgba(0,0,0,.09)}
-  .dl-icon{font-size:24px;flex-shrink:0}
-  .dl-name{font-size:12px;font-weight:600}
-  .dl-type{font-size:11px;color:var(--muted)}
-
-  footer{text-align:center;padding:22px;font-size:12px;color:var(--muted);
-    border-top:1px solid var(--border)}
-  a{color:var(--blue)}
-
-  @media(max-width:600px){
-    .highlight-grid{grid-template-columns:1fr}
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Incident Response Framework</title>
+    <meta name="description" content="Download the full PDF report and PowerPoint presentation for a 100‑employee cybersecurity simulation covering 6 threat scenarios.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Cybersecurity Incident Response Framework">
+    <meta property="og:description" content="Phishing · Ransomware · RAT · DDoS · Insider Threat · MitM – Full SOC reports inside.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/your-repo/">
+    
+    <!-- Favicon (shield emoji as base64 SVG) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #0a0c10;
+            color: #cdd6f4;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Subtle grid background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        header {
+            margin-bottom: 3.5rem;
+        }
+        
+        .logo-icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            filter: drop-shadow(0 0 8px #00ff41);
+        }
+        
+        h1 {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #00ff41;
+            text-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+        
+        .subtitle {
+            font-size: 1.15rem;
+            color: #a1aab3;
+            max-width: 600px;
+            margin: 0 auto 0.25rem;
+            font-weight: 400;
+        }
+        
+        .stats-banner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.8rem;
+            font-family: 'Share Tech Mono', monospace;
+            color: #00ff41;
+            opacity: 0.9;
+        }
+        
+        .stats-banner span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 1rem;
+            background: rgba(0, 255, 65, 0.05);
+            padding: 0.3rem 1rem;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 255, 65, 0.15);
+        }
+        
+        /* Cards section */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .card {
+            background: rgba(13, 17, 23, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 255, 65, 0.2);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            flex: 1 1 280px;
+            max-width: 380px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00ff41, #0ff);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .card:hover {
+            border-color: #00ff41;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 255, 65, 0.15);
+        }
+        
+        .card:hover::before {
+            opacity: 1;
+        }
+        
+        .card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 65, 0.5));
+        }
+        
+        .card h2 {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.5rem;
+            color: #00ff41;
+            margin-bottom: 0.75rem;
+        }
+        
+        .card p {
+            color: #b0b8c1;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+        
+        .file-meta {
+            font-size: 0.85rem;
+            color: #6e7681;
+            margin-bottom: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+        
+        .btn-download {
+            display: inline-block;
+            background: transparent;
+            border: 2px solid #00ff41;
+            color: #00ff41;
+            padding: 0.75rem 2rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+        }
+        
+        .btn-download:hover {
+            background: #00ff41;
+            color: #0a0c10;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+        }
+        
+        footer {
+            margin-top: auto;
+            padding-top: 2rem;
+            color: #6e7681;
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(0, 255, 65, 0.1);
+            width: 100%;
+            max-width: 1000px;
+            text-align: center;
+        }
+        
+        .team-names {
+            font-family: 'Share Tech Mono', monospace;
+            color: #a1aab3;
+            margin-top: 0.25rem;
+        }
+        
+        .team-names span {
+            margin: 0 0.4rem;
+            position: relative;
+        }
+        
+        .team-names span:not(:last-child)::after {
+            content: "•";
+            margin-left: 0.8rem;
+            color: #00ff41;
+            opacity: 0.5;
+        }
+        
+        /* Responsive */
+        @media (max-width: 680px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .cards {
+                gap: 2rem;
+            }
+            .card {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<div class="hero">
-  <h1>Cybersecurity Incident Response Framework</h1>
-  <p>DEPI Academic Project &nbsp;&middot;&nbsp; 4-Week Deliverable &nbsp;&middot;&nbsp; All sections complete</p>
-  <div class="team-row">
-    <span class="name-chip">Omar</span>
-    <span class="name-chip">Youssef</span>
-    <span class="name-chip">Omar</span>
-    <span class="name-chip">Mahmoud</span>
-  </div>
-</div>
-
-<div class="wrap">
-
-  <!-- MAIN DELIVERABLES -->
-  <div class="section-title">Main Deliverables</div>
-  <div class="highlight-grid">
-    <a class="highlight-card"
-       href="https://github.com/rei-rain/DEPI/raw/main/deliverables/final-presentation.pptx"
-       target="_blank">
-      <div class="hl-icon">&#127944;</div>
-      <div>
-        <div class="hl-bar" style="background:var(--blue)"></div>
-        <div class="hl-title">Final Presentation</div>
-        <div class="hl-sub">PowerPoint &middot; 12 slides &middot; 30-minute format &middot; All 6 threat scenarios</div>
-      </div>
-    </a>
-    <a class="highlight-card"
-       href="https://github.com/rei-rain/DEPI/raw/main/deliverables/DEPI-FINAL-REPORT.pdf"
-       target="_blank">
-      <div class="hl-icon">&#128196;</div>
-      <div>
-        <div class="hl-bar" style="background:var(--red)"></div>
-        <div class="hl-title">Full Project Report</div>
-        <div class="hl-sub">PDF &middot; 33 pages &middot; 6 attacks &middot; SOC incident reports &middot; Executive summary</div>
-      </div>
-    </a>
-  </div>
-
-  <!-- DEPI SECTIONS -->
-  <div class="section-title">DEPI Documentation Sections</div>
-  <div class="depi-grid">
-
-    <div class="depi-card">
-      <div class="depi-card-hdr">
-        <div class="depi-num" style="background:var(--blue)">1</div>
-        <div class="depi-card-title">Project Planning &amp; Management</div>
-      </div>
-      <div class="depi-card-files">
-        <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/1-project-planning/project-proposal.md" target="_blank">&#128196; project-proposal.md</a>
-        <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/1-project-planning/project-plan.md" target="_blank">&#128196; project-plan.md</a>
-        <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/1-project-planning/task-assignment-roles.md" target="_blank">&#128196; task-assignment-roles.md</a>
-        <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/1-project-planning/risk-assessment.md" target="_blank">&#128196; risk-assessment.md</a>
-        <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/1-project-planning/kpis.md" target="_blank">&#128196; kpis.md</a>
-      </div>
+    <div class="container">
+        <header>
+            <div class="logo-icon">🛡️</div>
+            <h1>CYBERSECURITY INCIDENT<br>RESPONSE FRAMEWORK</h1>
+            <p class="subtitle">
+                A 100‑employee simulation with 6 real‑world attack scenarios, full SOC case reports, and zero ransoms paid.
+            </p>
+            <div class="stats-banner">
+                <span>⚡ 6 Threats</span>
+                <span>🖥️ 100 Employees</span>
+                <span>📋 6 SOC Cases</span>
+                <span>💰 $0 Ransom</span>
+            </div>
+        </header>
+        
+        <div class="cards">
+            <!-- PDF Card -->
+            <div class="card">
+                <div class="card-icon">📄</div>
+                <h2>Full Report (PDF)</h2>
+                <p>32‑page detailed document covering all six threats, technical breakdowns, root cause analysis, and hardening controls.</p>
+                <div class="file-meta">
+                    <span>📅 32 pages</span>
+                    <span>•</span>
+                    <span>📊 6 SOC reports</span>
+                </div>
+                <a href="Deliverables/CYBERSECURITY INCIDENT RESPONSE FRAMEWORK.pdf" class="btn-download" download>
+                    ⬇ Download PDF
+                </a>
+            </div>
+            
+            <!-- PPTX Card -->
+            <div class="card">
+                <div class="card-icon">📽️</div>
+                <h2>Presentation (PPTX)</h2>
+                <p>Executive slide deck summarizing the simulation, threat flows, and top recommendations. Ready for presenting.</p>
+                <div class="file-meta">
+                    <span>📊 Slide deck</span>
+                    <span>•</span>
+                    <span>🎯 Key findings</span>
+                </div>
+                <a href="Deliverables/presentation.pptx" class="btn-download" download>
+                    ⬇ Download PPTX
+                </a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>DEPI Academic Project – Cybersecurity Track</p>
+            <div class="team-names">
+                <span>Omar</span>
+                <span>Youssef</span>
+                <span>Omar</span>
+                <span>Mahmoud</span>
+            </div>
+        </footer>
     </div>
-
-    <div class="depi-card">
-      <div class="depi-card-hdr">
-        <div class="depi-num" style="background:var(--teal)">2</div>
-        <div class="depi-card-title">Literature Review</div>
-      </div>
-      <div class="depi-card-files">
-        <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/2-literature-review/literature-review.md" target="_blank">&#128196; literature-review.md</a>
-        <span class="file-note">Feedback, grading criteria, suggested improvements, full references</span>
-      </div>
-    </div>
-
-    <div class="depi-card">
-      <div class="depi-card-hdr">
-        <div class="depi-num" style="background:var(--amber)">3</div>
-        <div class="depi-card-title">Requirements Gathering</div>
-      </div>
-      <div class="depi-card-files">
-        <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/3-requirements-gathering/requirements-gathering.md" target="_blank">&#128196; requirements-gathering.md</a>
-        <span class="file-note">Stakeholders, user stories, functional and non-functional requirements</span>
-      </div>
-    </div>
-
-    <div class="depi-card">
-      <div class="depi-card-hdr">
-        <div class="depi-num" style="background:var(--purple)">4</div>
-        <div class="depi-card-title">System Analysis &amp; Design</div>
-      </div>
-      <div class="depi-card-files">
-        <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/4-system-analysis-design/system-analysis-design.md" target="_blank">&#128196; system-analysis-design.md</a>
-        <span class="file-note">Use Case, ERD, DFD, Sequence, Activity, State, Class diagrams, Tech Stack, Deployment</span>
-      </div>
-    </div>
-
-    <div class="depi-card">
-      <div class="depi-card-hdr">
-        <div class="depi-num" style="background:var(--red)">5</div>
-        <div class="depi-card-title">Implementation</div>
-      </div>
-      <div class="depi-card-files">
-        <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/5-implementation/implementation-guide.md" target="_blank">&#128196; implementation-guide.md</a>
-        <span class="file-note">Documentation standards, GitFlow branching, CI/CD pipeline, installation guide</span>
-      </div>
-    </div>
-
-    <div class="depi-card">
-      <div class="depi-card-hdr">
-        <div class="depi-num" style="background:var(--green)">6</div>
-        <div class="depi-card-title">Testing &amp; QA</div>
-      </div>
-      <div class="depi-card-files">
-        <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/6-testing/testing-qa.md" target="_blank">&#128196; testing-qa.md</a>
-        <span class="file-note">20 test cases &middot; 10 bug reports &middot; automated testing &middot; 100% pass rate</span>
-      </div>
-    </div>
-
-    <div class="depi-card">
-      <div class="depi-card-hdr">
-        <div class="depi-num" style="background:#7A4F2A">7</div>
-        <div class="depi-card-title">Final Presentation &amp; Reports</div>
-      </div>
-      <div class="depi-card-files">
-        <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/7-final-presentation/user-manual.md" target="_blank">&#128196; user-manual.md</a>
-        <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/deliverables/final-presentation.pptx" target="_blank">&#128202; final-presentation.pptx</a>
-        <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/deliverables/DEPI-FINAL-REPORT.pdf" target="_blank">&#128196; DEPI-FINAL-REPORT.pdf</a>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- WEEKLY WORK -->
-  <div class="section-title">Weekly Work</div>
-  <div class="weeks-grid">
-    <div class="week-card">
-      <div class="week-hdr">
-        <div class="week-num" style="background:var(--blue)">1</div>
-        <span style="font-size:13px;font-weight:600">Foundation &amp; Awareness</span>
-      </div>
-      <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/week-1-foundation/research-report.md" target="_blank">&#128196; research-report.md</a>
-      <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/week-1-foundation/network-discovery.md" target="_blank">&#128196; network-discovery.md</a>
-    </div>
-    <div class="week-card">
-      <div class="week-hdr">
-        <div class="week-num" style="background:var(--teal)">2</div>
-        <span style="font-size:13px;font-weight:600">IR Planning</span>
-      </div>
-      <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/week-2-ir-planning/incident-response-plan.md" target="_blank">&#128196; incident-response-plan.md</a>
-      <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/week-2-ir-planning/architecture-and-hardening.md" target="_blank">&#128196; architecture-and-hardening.md</a>
-    </div>
-    <div class="week-card">
-      <div class="week-hdr">
-        <div class="week-num" style="background:var(--amber)">3</div>
-        <span style="font-size:13px;font-weight:600">Simulation</span>
-      </div>
-      <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/week-3-simulation/incident-scenario.md" target="_blank">&#128196; incident-scenario.md</a>
-      <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/week-3-simulation/simulation-log.md" target="_blank">&#128196; simulation-log.md</a>
-      <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/week-3-simulation/response-documentation.md" target="_blank">&#128196; response-documentation.md</a>
-    </div>
-    <div class="week-card">
-      <div class="week-hdr">
-        <div class="week-num" style="background:var(--purple)">4</div>
-        <span style="font-size:13px;font-weight:600">Final Report</span>
-      </div>
-      <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/week-4-final/final-report.md" target="_blank">&#128196; final-report.md</a>
-      <a class="file-link" href="https://github.com/rei-rain/DEPI/blob/main/week-4-final/presentation-notes.md" target="_blank">&#128196; presentation-notes.md</a>
-    </div>
-  </div>
-
-  <!-- DOWNLOADS -->
-  <div class="section-title">All Downloads</div>
-
-  <div style="font-size:11px;font-weight:700;text-transform:uppercase;
-    letter-spacing:.07em;color:var(--muted);margin:0 0 8px">Presentations</div>
-  <div class="dl-grid" style="margin-bottom:16px">
-    <a class="dl-card" href="https://github.com/rei-rain/DEPI/raw/main/deliverables/final-presentation.pptx" target="_blank">
-      <div class="dl-icon">&#127944;</div>
-      <div><div class="dl-name">Final Presentation</div><div class="dl-type">PowerPoint &middot; 12 slides</div></div>
-    </a>
-    <a class="dl-card" href="https://github.com/rei-rain/DEPI/raw/main/deliverables/week1-presentation.pptx" target="_blank">
-      <div class="dl-icon">&#128202;</div>
-      <div><div class="dl-name">Week 1 Slides</div><div class="dl-type">PowerPoint &middot; 5 slides</div></div>
-    </a>
-  </div>
-
-  <div style="font-size:11px;font-weight:700;text-transform:uppercase;
-    letter-spacing:.07em;color:var(--muted);margin:0 0 8px">Reports &mdash; PDF</div>
-  <div class="dl-grid" style="margin-bottom:16px">
-    <a class="dl-card" href="https://github.com/rei-rain/DEPI/raw/main/deliverables/DEPI-FINAL-REPORT.pdf" target="_blank">
-      <div class="dl-icon">&#128196;</div>
-      <div><div class="dl-name">Full Project Report</div><div class="dl-type">PDF &middot; 33 pages</div></div>
-    </a>
-    <a class="dl-card" href="https://github.com/rei-rain/DEPI/raw/main/deliverables/FINAL-REPORT.pdf" target="_blank">
-      <div class="dl-icon">&#128196;</div>
-      <div><div class="dl-name">Final Report</div><div class="dl-type">PDF</div></div>
-    </a>
-    <a class="dl-card" href="https://github.com/rei-rain/DEPI/raw/main/deliverables/week1-research-report.pdf" target="_blank">
-      <div class="dl-icon">&#128196;</div>
-      <div><div class="dl-name">Week 1 Report</div><div class="dl-type">PDF</div></div>
-    </a>
-    <a class="dl-card" href="https://github.com/rei-rain/DEPI/raw/main/deliverables/week2-incident-response-plan.pdf" target="_blank">
-      <div class="dl-icon">&#128196;</div>
-      <div><div class="dl-name">Week 2 IR Plan</div><div class="dl-type">PDF</div></div>
-    </a>
-    <a class="dl-card" href="https://github.com/rei-rain/DEPI/raw/main/deliverables/week3-simulation-report.pdf" target="_blank">
-      <div class="dl-icon">&#128196;</div>
-      <div><div class="dl-name">Week 3 Simulation</div><div class="dl-type">PDF</div></div>
-    </a>
-  </div>
-
-  <div style="font-size:11px;font-weight:700;text-transform:uppercase;
-    letter-spacing:.07em;color:var(--muted);margin:0 0 8px">Reports &mdash; Word</div>
-  <div class="dl-grid">
-    <a class="dl-card" href="https://github.com/rei-rain/DEPI/raw/main/deliverables/FINAL-REPORT.docx" target="_blank">
-      <div class="dl-icon">&#128216;</div>
-      <div><div class="dl-name">Final Report</div><div class="dl-type">Word (.docx)</div></div>
-    </a>
-    <a class="dl-card" href="https://github.com/rei-rain/DEPI/raw/main/deliverables/week1-research-report.docx" target="_blank">
-      <div class="dl-icon">&#128216;</div>
-      <div><div class="dl-name">Week 1 Report</div><div class="dl-type">Word (.docx)</div></div>
-    </a>
-    <a class="dl-card" href="https://github.com/rei-rain/DEPI/raw/main/deliverables/week2-incident-response-plan.docx" target="_blank">
-      <div class="dl-icon">&#128216;</div>
-      <div><div class="dl-name">Week 2 IR Plan</div><div class="dl-type">Word (.docx)</div></div>
-    </a>
-    <a class="dl-card" href="https://github.com/rei-rain/DEPI/raw/main/deliverables/week3-simulation-report.docx" target="_blank">
-      <div class="dl-icon">&#128216;</div>
-      <div><div class="dl-name">Week 3 Simulation</div><div class="dl-type">Word (.docx)</div></div>
-    </a>
-  </div>
-
-</div>
-
-<footer>
-  Cybersecurity Incident Response Framework &nbsp;&middot;&nbsp; DEPI Academic Project &nbsp;&middot;&nbsp;
-  <a href="https://github.com/rei-rain/DEPI" target="_blank">github.com/rei-rain/DEPI</a>
-</footer>
-
 </body>
 </html>
