@@ -67,8 +67,7 @@ Download them directly or use the live landing page below.
 
 Visit the project landing page (hosted with GitHub Pages) to preview both files:
 
-[**https://yourusername.github.io/your-repo/**](https://yourusername.github.io/your-repo/)  
-*(Replace with your actual GitHub Pages URL)*
+**https://omaressam666.github.io/OMARESSAM666/**
 
 The page offers side‑by‑side download cards for the PDF and PowerPoint.
 
